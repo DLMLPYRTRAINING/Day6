@@ -30,7 +30,7 @@ timestamp = str(datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S'))
 # else it should look for and load the old model for which the name has been passed
 # from the model folder
 models_store = "models" + os.sep
-model_name = "Model_0.081652014855_0.984_2017_09_20_10_27_42" # "Model_0.0828318153799_0.9827_2017_09_11_13_12_02" # "Model_0.109827256982_0.9841_2017_09_11_11_53_30"
+model_name = "" # "Model_0.0828318153799_0.9827_2017_09_11_13_12_02" # "Model_0.109827256982_0.9841_2017_09_11_11_53_30"
 
 
 # Data preparation
@@ -90,7 +90,7 @@ def model(x_train, y_train, x_test, y_test):
 
     model.fit(x_train, y_train,
               batch_size={{choice([64, 128])}},
-              epochs=20,
+              epochs=2,
               verbose=2,
               validation_data=(x_test, y_test))
     score, acc = model.evaluate(x_test, y_test, verbose=0)
@@ -101,6 +101,10 @@ def model(x_train, y_train, x_test, y_test):
 
 # model name not provided
 if model_name == "":
+
+    # incase there's a 'generator' exception at Trials()
+    # Just change line 714 in pyll / base.py to:
+    # order = list(nx.topological_sort(G))
 
     best_run, best_model = optim.minimize(model=model,
                                           data=data,

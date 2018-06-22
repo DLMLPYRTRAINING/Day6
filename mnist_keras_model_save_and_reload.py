@@ -25,7 +25,7 @@ timestamp = str(datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S'))
 # else it should look for and load the old model for which the name has been passed
 # from the model folder
 models_store = "models" + os.sep
-model_name = "Model_0.109827256982_0.9841_2017_09_11_11_53_30"
+model_name = "Model_0.11124369209974574_0.983_2018_06_22_08_25_57"
 
 
 # model name not provided

@@ -63,40 +63,40 @@ print('Test accuracy:', score[1])
 
 
 
-# # test with my image
-# from matplotlib import pyplot as plt
-# from random import randint
-#
-# import numpy as np
-# from PIL import Image,ImageOps
-#
-# im = Image.open('test.png')
-#
-# im = im.convert('L') # grayscale
-# im = ImageOps.invert(im) # invert color
-# im = im.convert('1')  # make it pure black and white
-# pixels = np.asarray(im.getdata(), dtype=np.float64).reshape((im.size[1], im.size[0]))
-# # print(type(pixels))
-# pixels = pixels.flatten() # flatten all the list of lists of row x col to a single array
-# # as 255 is the max number of color a pixel can have we device each element of the array
-# # to normailze the values of each pixel between 0 and 1
-# pixels = pixels / 255 # or max(pixels)
-# pixels = pixels.reshape(1, 784)
-#
-# classification = model.predict(pixels)
-# print('NN predicted:---------->', np.argmax(classification, 1))
-# plt.imshow(pixels.reshape(28, 28), cmap=plt.cm.binary)
-# plt.show()
+# test with my image
+from matplotlib import pyplot as plt
+from random import randint
 
-# test with my data
-num = randint(0, x_test.shape[0])
-img = x_test[num]
-img = img.reshape(1, 784)
-print(type(img))
-print(img)
+import numpy as np
+from PIL import Image,ImageOps
 
-classification = model.predict(img)
-#print(classification.reshape(1, 10))
-print('NN predicted', np.argmax(classification, 1))
-plt.imshow(img.reshape(28, 28), cmap=plt.cm.binary)
+im = Image.open('test.png')
+
+im = im.convert('L') # grayscale
+im = ImageOps.invert(im) # invert color
+im = im.convert('1')  # make it pure black and white
+pixels = np.asarray(im.getdata(), dtype=np.float64).reshape((im.size[1], im.size[0]))
+# print(type(pixels))
+pixels = pixels.flatten() # flatten all the list of lists of row x col to a single array
+# as 255 is the max number of color a pixel can have we device each element of the array
+# to normailze the values of each pixel between 0 and 1
+pixels = pixels / 255 # or max(pixels)
+pixels = pixels.reshape(1, 784)
+
+classification = model.predict(pixels)
+print('NN predicted:---------->', np.argmax(classification, 1))
+plt.imshow(pixels.reshape(28, 28), cmap=plt.cm.binary)
 plt.show()
+
+# # test with my data
+# num = randint(0, x_test.shape[0])
+# img = x_test[num]
+# img = img.reshape(1, 784)
+# print(type(img))
+# print(img)
+#
+# classification = model.predict(img)
+# #print(classification.reshape(1, 10))
+# print('NN predicted', np.argmax(classification, 1))
+# plt.imshow(img.reshape(28, 28), cmap=plt.cm.binary)
+# plt.show()
