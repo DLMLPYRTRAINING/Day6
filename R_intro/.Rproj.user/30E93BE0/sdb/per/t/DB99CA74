@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "a = 1\nb=2\nc = a + b\nc <- a+b\n\n\na = list(1,2.03,\"3\",40+1)\npaste(\"two\",\"hundred\")\n\n\nif (b == 2){\n  print(\"yes\")\n}else{\n  print(\"no\")\n}\n\nfor(i in 1:5) print(1:i)\n\na = list(1,2.03,2.03,\"3\",40+1)\nunique(a)\n\na[[1]]\n\na = list(1,c(1,2,3),2.03,2.03,\"3\",40+1)\n\na[2]\na[2][1]\na[2][[1]][1]\n\na = list(1,list(c(1,2,3),c(3,4,5,6)),2.03,2.03,\"3\",40+1)\na[2]\na[2][[1]][2]\n",
+    "created" : 1529632270403.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2828565082",
+    "id" : "DB99CA74",
+    "lastKnownWriteTime" : 1529633381,
+    "last_content_update" : 1529633381620,
+    "path" : "~/DLMLPYRTRAINING/Day6/R_intro/exampls.r",
+    "project_path" : "exampls.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
